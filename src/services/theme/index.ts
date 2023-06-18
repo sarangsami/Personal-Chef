@@ -9,13 +9,16 @@ export const roboto = Roboto({
   fallback: ["Helvetica", "Arial", "sans-serif"],
 });
 
-const theme = (props?: { prefersDarkMode?: boolean }) =>{
-
+const theme = (props?: {
+  prefersDarkMode?: boolean;
+  appDirection?: "rtl" | "ltr";
+}) => {
   return createTheme({
+    direction: props?.appDirection || "ltr",
     palette: {
-      mode: props?.prefersDarkMode ? 'dark' : 'light',
+      mode: props?.prefersDarkMode ? "dark" : "light",
       primary: {
-        main: "#556cd6",
+        main: "#fb7a30",
       },
       secondary: {
         main: "#19857b",
@@ -28,6 +31,6 @@ const theme = (props?: { prefersDarkMode?: boolean }) =>{
       fontFamily: roboto.style.fontFamily,
     },
   });
-}
-  
+};
+
 export default theme;
